@@ -1,0 +1,41 @@
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div>
+  <form #formRef="ngForm">
+    <div class="form-group">
+      <label for="problemName">Problem Name</label>
+      <input type="text" class="form-control" id="problemName"
+      name="problemName" required placeholder="Enter Problem Name" [(ngModel)]="newProblem.name" />
+    </div>
+    <div class="form-group">
+      <label for="problemDesc">Problem Description</label>
+      <textarea type="text" row="3" class="form-control" id="problemDesc"
+      name="problemDesc" required placeholder="Enter Problem Description" [(ngModel)]="newProblem.desc">
+      </textarea>
+    </div>
+    <div class="form-group">
+      <label for="difficulty">Difficulty</label>
+      <select class="form-control" id="difficulty"
+      name="difficulty" [(ngModel)]="newProblem.difficulty">
+        <option value="" disabled selected> Select Difficulty </option>
+        <option *ngFor="let difficulty of difficulties" [value]="difficulty">
+          {{difficulty}}
+        </option>
+      </select>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-primary pull-right" (click)="addProblem()">
+          Add problem
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<body>

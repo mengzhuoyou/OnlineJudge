@@ -1,0 +1,22 @@
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container" *ngIf="problem">
+      <div class="col-xs-12 col-md-4">
+        <div>
+          <h2>
+            {{problem.id}}. {{problem.name}}
+          </h2>
+          <p>
+            {{problem.desc}}
+          </p>
+          <br/>
+        </div>
+      </div>
+  </div>
+</body>
